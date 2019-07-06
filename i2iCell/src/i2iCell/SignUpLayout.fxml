@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="i2iCell.Controller">
+   <children>
+      <Pane prefHeight="547.0" prefWidth="333.0" style="-fx-background-color: #3fade3;">
+         <children>
+            <Pane layoutX="24.0" layoutY="60.0" prefHeight="385.0" prefWidth="285.0">
+               <children>
+                  <Label layoutX="92.0" layoutY="45.0" prefHeight="80.0" prefWidth="102.0" text="Hello," textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Sylfaen" size="39.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="80.0" layoutY="125.0" text="We Do " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Sylfaen" size="39.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="173.0" text="Communication" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Sylfaen" size="39.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="160.0" fitWidth="168.0" layoutX="54.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/f37d0b74-e9d1-44a5-a.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="1.0" layoutY="499.0" prefHeight="54.0" prefWidth="874.0" style="-fx-background-color: d3d3d3;">
+               <children>
+                  <Text layoutX="390.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bizi Takip Edin @i2icell" textAlignment="CENTER" wrappingWidth="95.0" />
+                  <Text layoutX="570.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bizi Arayın  +90(850)3467576" textAlignment="CENTER" wrappingWidth="112.576171875" />
+                  <Text layoutX="737.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bize Yazın info@ i2i-systems.com" textAlignment="CENTER" wrappingWidth="87.505859375" />
+                  <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="348.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_twitter_100px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="696.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_filled_messag.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="528.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_technical_sup.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="-6.0" layoutY="14.0" prefHeight="44.0" prefWidth="874.0" style="-fx-background-color: #d3d3d3;">
+         <children>
+            <Label layoutX="111.0" layoutY="4.0" text="i2i Cell">
+               <font>
+                  <Font name="OCR A Extended" size="33.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="-35.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="90.0" fitWidth="81.0" layoutX="30.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/ade7ef70-0b01-4b58-8.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="45.0" layoutX="792.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/oval.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="348.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: rgba(0,0,0,0.08)rgba(0,0,0,0.08); -fx-background-color: linear-gradient(#9a9a9a, #909090); -fx-background-radius: 10,10,10; -fx-background-image: icons\ade7ef70-0b01-4b58-8.png;" text="Back" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Pane fx:id="centerPane" layoutX="407.0" layoutY="66.0" prefHeight="415.0" prefWidth="392.0" style="-fx-border-style: dashed;">
+         <children>
+            <Button layoutX="157.0" layoutY="354.0" mnemonicParsing="false" onAction="#onClickRegister" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: rgba(0,0,0,0.08)rgba(0,0,0,0.08); -fx-background-color: linear-gradient(#9a9a9a, #909090); -fx-background-radius: 10,10,10;" styleClass="button-lion" text="Kaydet" />
+            <Text layoutX="29.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TC Kimlik No" textAlignment="CENTER" wrappingWidth="81.0" />
+            <Text layoutX="-2.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon Numaranız" textAlignment="CENTER" wrappingWidth="125.85498046875" />
+            <Text layoutX="45.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Şifreniz" textAlignment="CENTER" wrappingWidth="49.775390625" />
+            <TextField fx:id="txtRegisterTc" layoutX="132.0" layoutY="12.0" prefHeight="34.0" prefWidth="159.0" />
+            <TextField fx:id="txtRegisterNumber" layoutX="132.0" layoutY="209.0" prefHeight="32.0" prefWidth="159.0" />
+            <PasswordField fx:id="txtRegisterPassword" layoutX="132.0" layoutY="299.0" prefHeight="32.0" prefWidth="159.0" />
+            <Label fx:id="labelRegisterMessage" layoutX="26.0" layoutY="337.0" prefHeight="17.0" prefWidth="356.0" style="-fx-alignment: center;" text="dsadsa" />
+            <Text layoutX="53.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adınız" />
+            <Text layoutX="44.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Soyadınız" wrappingWidth="50.4140625" />
+            <TextField fx:id="txtRegisterName" layoutX="132.0" layoutY="61.0" prefHeight="34.0" prefWidth="159.0" />
+            <TextField fx:id="txtRegisterLastName" layoutX="132.0" layoutY="109.0" prefHeight="32.0" prefWidth="159.0" />
+            <Text layoutX="53.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail" />
+            <TextField fx:id="txtRegisterMail" layoutX="132.0" layoutY="161.0" prefHeight="32.0" prefWidth="159.0" />
+            <Text layoutX="33.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doğum Tarihi" />
+            <TextField layoutX="132.0" layoutY="251.0" prefHeight="32.0" prefWidth="159.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
