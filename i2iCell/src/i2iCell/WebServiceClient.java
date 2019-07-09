@@ -47,18 +47,7 @@ public class WebServiceClient {
 		return responseStringBuilder.toString();
 	}
 	
-	private boolean getSingleResultFromResponse(String response) {
 
-		int beginIndex = response.indexOf(RETURN_TAG_BEGIN) + RETURN_TAG_BEGIN.length();
-		int endIndex = response.indexOf(RETURN_TAG_END);
-
-		String result = response.substring(beginIndex, endIndex);
-
-		if (result.equals(LOGIN_SUCCESSFUL))
-			return true;
-		return false;
-
-	}
 	
 	public String[] getResultFromResponse(String response) {
 		
@@ -143,7 +132,7 @@ public class WebServiceClient {
 	
 	private String readServiceUrlFromFile(String webServiceName) {
 		
-		File file = new File("C:\\Users\\7321\\eclipse-workspace\\i2iCell\\src\\i2iCell\\ServiceLinks.xml");
+		File file = new File("src/i2iCell/ServiceLinks.xml");
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder;
 		
@@ -175,26 +164,6 @@ public class WebServiceClient {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
