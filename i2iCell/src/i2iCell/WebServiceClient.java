@@ -47,7 +47,7 @@ public class WebServiceClient {
 		return responseStringBuilder.toString();
 	}
 	
-	private boolean getSingleResultFromResponse(String response) {
+	private boolean getBooleanResultFromResponse(String response) {
 
 		int beginIndex = response.indexOf(RETURN_TAG_BEGIN) + RETURN_TAG_BEGIN.length();
 		int endIndex = response.indexOf(RETURN_TAG_END);
@@ -60,14 +60,14 @@ public class WebServiceClient {
 
 	}
 	
-	public String[] getResultFromResponse(String response) {
+	public String[] getStringResultFromResponse(String response) {
 		
 		int endIndex,beginIndex;
 		
 		Pattern pattern = Pattern.compile(RETURN_PATTERN);
 	    Matcher matcher = pattern.matcher(response);
 
-	    String result = "";
+	    String resultWord = "";
 	    String rawResult;
 	    
 	    while (matcher.find()) {
@@ -80,11 +80,11 @@ public class WebServiceClient {
 	    	else {
 	    		endIndex =  rawResult.length() ;
 	    	}   	
-	    	result += rawResult.substring(beginIndex,endIndex) + ",";
+	    	resultWord += rawResult.substring(beginIndex,endIndex) + ",";
 	    }
 		
-	    String[] balances = result.split(",");
-		return balances;
+	    String[] resultArray = resultWord.split(",");
+		return resultArray;
 		
 	}
 	
@@ -98,7 +98,7 @@ public class WebServiceClient {
 		
 		
 		
-		if(getResultFromResponse(requestFromUrl(serviceUrlString))[0].equals(LOGIN_SUCCESSFUL) )
+		if(getStringResultFromResponse(requestFromUrl(serviceUrlString))[0].equals(LOGIN_SUCCESSFUL) )
 			return true;
 		return false;
 		
@@ -113,7 +113,7 @@ public class WebServiceClient {
 		serviceUrlString = serviceUrlString.replace("INPUTNUMBER", phoneNumber);
 		
 		String response = requestFromUrl(serviceUrlString);
-		String[] balances = getResultFromResponse(response);
+		String[] balances = getStringResultFromResponse(response);
 				
 		return balances;
 	}
@@ -123,7 +123,7 @@ public class WebServiceClient {
 		String serviceUrlString =	readServiceUrlFromFile("createUser");
 		serviceUrlString = insertUserInputsToString(user, serviceUrlString);
 		
-		return getSingleResultFromResponse(requestFromUrl(serviceUrlString));
+		return getBooleanResultFromResponse(requestFromUrl(serviceUrlString));
 	}
 	
 	public boolean changePassword(User user) {
@@ -136,14 +136,14 @@ public class WebServiceClient {
 		
 		String response = requestFromUrl(serviceUrlString);
 		
-		return getSingleResultFromResponse(response);
+		return getBooleanResultFromResponse(response);
 		
 	}
 	
 	
 	private String readServiceUrlFromFile(String webServiceName) {
 		
-		File file = new File("src/i2iCell/ServiceLinks.xml");
+		File file = new File("src/i2iCell//ServiceLinks.xml");
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder;
 		
