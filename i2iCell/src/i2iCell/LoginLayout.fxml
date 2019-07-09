@@ -99,6 +99,7 @@
       </Pane>
       <Pane fx:id="centerPane" layoutX="414.0" layoutY="66.0" prefHeight="415.0" prefWidth="392.0" style="-fx-border-style: dashed;">
          <children>
+            <PasswordField fx:id="txtLoginPassword" layoutX="162.0" layoutY="146.0" onKeyTyped="#onKeyPressPassword" prefHeight="32.0" prefWidth="159.0" text="Melih1234" />
             <Text layoutX="50.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon Numaranız" textAlignment="CENTER" wrappingWidth="81.20899963378906">
                <font>
                   <Font size="14.0" />
@@ -109,12 +110,11 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <TextField fx:id="txtLoginName" layoutX="162.0" layoutY="96.0" prefHeight="32.0" prefWidth="159.0" text="5399672151" />
+            <TextField fx:id="txtLoginName" layoutX="162.0" layoutY="96.0" onKeyTyped="#onKeyPressPhoneNumber" prefHeight="32.0" prefWidth="159.0" text="5327981750" />
             <Button layoutX="92.0" layoutY="222.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: rgba(0,0,0,0.08)rgba(0,0,0,0.08); -fx-background-color: linear-gradient(#9a9a9a, #909090); -fx-background-radius: 10,10,10;" styleClass="button-lion" text="Giriş" />
             <Button layoutX="196.0" layoutY="222.0" mnemonicParsing="false" onAction="#onClickForgotPassword" prefHeight="32.0" prefWidth="113.0" style="-fx-background-color: rgba(0,0,0,0.08)rgba(0,0,0,0.08); -fx-background-color: linear-gradient(#9a9a9a, #909090); -fx-background-radius: 10,10,10;" styleClass="button-lion" text="Şifremi Unuttum" />
             <Text layoutX="143.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kayıtlı Değil misiniz?" />
             <Button layoutX="122.0" layoutY="343.0" mnemonicParsing="false" onAction="#onClickCreateAccount" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 6,6,6; -fx-border-radius: 10,10,10; -fx-border-style: solid;" styleClass="button-lion" text="Hesap Oluştur" />
-            <PasswordField fx:id="txtLoginPassword" layoutX="162.0" layoutY="146.0" prefHeight="32.0" prefWidth="159.0" text="melihsinan123" />
             <Label fx:id="labelLoginMessage" layoutX="8.0" layoutY="283.0" prefHeight="17.0" prefWidth="378.0" style="-fx-alignment: center;" textAlignment="CENTER" />
          </children>
       </Pane>

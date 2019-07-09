@@ -179,42 +179,42 @@
                         <Image url="@icons/icons8_binders_folde.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="1.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
+                  <Button layoutX="1.0" mnemonicParsing="false" onAction="#onClickHome" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
                   <Button layoutX="6.0" layoutY="235.0" mnemonicParsing="false" onAction="#onClickLogout" prefHeight="44.0" prefWidth="40.0" style="-fx-background-color: transparent;" textAlignment="CENTER" />
-                  <Button layoutX="2.0" layoutY="164.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
+                  <Button layoutX="2.0" layoutY="164.0" mnemonicParsing="false" onAction="#onClickInfo" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
                   <Button layoutY="73.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
                </children>
             </Pane>
-            <Pane layoutX="25.0" layoutY="31.0">
+            <Pane layoutX="25.0" layoutY="31.0" prefHeight="102.0" prefWidth="432.0">
                <children>
-                  <Label fx:id="labelShowUserName" layoutX="75.0" layoutY="5.0" prefHeight="17.0" prefWidth="324.0">
+                  <Label fx:id="labelShowUserName" layoutX="66.0" layoutY="8.0" prefHeight="17.0" prefWidth="324.0">
                      <font>
-                        <Font name="Noto Serif Regular" size="15.0" />
+                        <Font name="Liberation Mono" size="17.0" />
                      </font>
                   </Label>
-                  <Text layoutX="12.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="İsim:">
+                  <Text layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="İsim:">
                      <font>
                         <Font name="Modern No. 20" size="20.0" />
                      </font>
                   </Text>
-                  <Text layoutX="9.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon:">
+                  <Text layoutX="9.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon:">
                      <font>
                         <Font name="Modern No. 20" size="20.0" />
                      </font>
                   </Text>
-                  <Text layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paket Adı:">
+                  <Text layoutX="9.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paket Adı:">
                      <font>
                         <Font name="Modern No. 20" size="20.0" />
                      </font>
                   </Text>
-                  <Label fx:id="labelShowUserPhone" layoutX="86.0" layoutY="32.0" prefHeight="17.0" prefWidth="324.0">
+                  <Label fx:id="labelShowUserPhone" layoutX="95.0" layoutY="41.0" prefHeight="17.0" prefWidth="324.0" text="5327778899">
                      <font>
-                        <Font name="Noto Serif Regular" size="15.0" />
+                        <Font name="Liberation Mono" size="17.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelShowUserPackage" layoutX="108.0" layoutY="58.0" prefHeight="17.0" prefWidth="324.0">
+                  <Label fx:id="labelShowUserPackage" layoutX="108.0" layoutY="67.0" prefHeight="17.0" prefWidth="324.0">
                      <font>
-                        <Font name="Noto Serif Regular" size="15.0" />
+                        <Font name="Liberation Mono" size="17.0" />
                      </font>
                   </Label>
                </children>

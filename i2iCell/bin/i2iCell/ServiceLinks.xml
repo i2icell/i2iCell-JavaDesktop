@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+<login>http://68.183.75.84:8080/i2iCellService/services/Services/login?inputPhoneNumber=USERNAME&amp;inputPassword=PASSWORDINPUT</login>
+<createUser>http://68.183.75.84:8080/i2iCellService/services/Services/createAccount?inputFirstName=FIRSTNAMEINPUT&amp;inputLastName=LASTNAMEINPUT&amp;inputPhoneNumber=PHONENUMBERINPUT&amp;inputEmail=EMAILINPUT&amp;inputPassword=PASSWORDINPUT&amp;inputBirthDate=BIRTHDAYINPUT&amp;inputTcNumber=TCNUMBERINPUT
+</createUser>
+
+<getBalances>http://68.183.75.84:8080/i2iCellService/services/Services/getBalances?inputPhoneNumber=INPUTNUMBER
+</getBalances>
+<changePassword>http://68.183.75.84:8080/i2iCellService/services/Services/changePassword?inputPhoneNumber=USERNAME&amp;inputTcNumber=TCNUMBERINPUT&amp;inputNewPassword=PASSWORDINPUT</changePassword>
+</root>

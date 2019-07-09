@@ -2,12 +2,13 @@ package i2iCell;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.regex.Pattern;
 
 public class User {
 
-	
 	private String firstName;
 	private String lastName;
 	private String tcNumber;
@@ -15,6 +16,11 @@ public class User {
 	private String birthDate;
 	private String password;
 	private String mail;
+	
+	private static final String MAIL_PATTERN = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+	private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,12}$";
+	private static final String NAME_PATTERN = "[a-zA-Z]+\\.?";
+	private static final char TURKISH_PHONE_NUMBER_PREFIX = '5';
 	
 	public String getFirstName() {
 		return firstName;
@@ -59,6 +65,27 @@ public class User {
 		this.mail = eMail;
 	}
 
+	public boolean isNameValid() {
+		
+		if(Pattern.matches(NAME_PATTERN, firstName) && Pattern.matches(NAME_PATTERN, lastName))
+			return true;
+		else return false;
+		
+	}
+	
+	public boolean isAdult() {
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy"); 
+		LocalDate start = LocalDate.parse(birthDate, formatter) ;
+		LocalDate today = LocalDate.now();
+		long years = java.time.temporal.ChronoUnit.YEARS.between( start , today );
+		System.out.println("YAÞ " + years);
+		if(years < 12.0 )
+			return false;
+		return true;
+		
+	}
+	
 	
 	public boolean isTcValid() {
 		if(tcNumber.length() != 11)
@@ -70,7 +97,7 @@ public class User {
 	
 
 	public boolean isPhoneNumberValid() {
-		if(phoneNumber.length() != 10 ) {
+		if(phoneNumber.length() != 10 && phoneNumber.charAt(0) != TURKISH_PHONE_NUMBER_PREFIX ) {
 			return false;
 		}else {
 			if(phoneNumber.charAt(0) != '5')
@@ -80,14 +107,15 @@ public class User {
 		}
 	}
 	
-	public boolean isBirthDateValid() {
-		
+	public boolean isBirthDateValid() {		
+		if(birthDate ==  null)
+			return false;
 		try {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 			dateFormat.setLenient(false);;			
-			Date date1 = dateFormat.parse(birthDate);
+			dateFormat.parse(birthDate);
 			
-			return true;
+			return isAdult();
 		} catch (ParseException e) {
 			return false;
 		}  
@@ -95,7 +123,7 @@ public class User {
 	
 	public boolean isNumeric(String string) {
 		try {
-		    Integer.parseInt(tcNumber);
+		    Double.parseDouble(string);
 		} catch (NumberFormatException e) {
 		    return false;
 		}
@@ -103,38 +131,36 @@ public class User {
 	}
 	
 	public boolean isMailValid() {
-	      String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-	      return mail.matches(regex);
+	      return Pattern.matches(MAIL_PATTERN,mail);
 	}
 	
 	public boolean isPasswordValid() {
 		
-		String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 		
-		return Pattern.matches(regex, password);
+		return Pattern.matches(PASSWORD_PATTERN, password);
 		
 		
 	}
 	
-	public boolean isUserValid() {
-		String result = "";
+	public String isUserValid() {
 		
 		
-		if(!isPasswordValid())
-			result += "Password is not valid\n";
-		if(!isMailValid())
-			result += "Mail is not valid\n";
-		if(!isBirthDateValid())
-			result += "Birth Date is not valid";
-		if(!isPhoneNumberValid())
-			result += "Phone number is not valid";
 		if(!isTcValid())
-			result += "TC is not valid";
-		
-		return result.equals("");
-		
-		
-		
+			return "TC Kimlik numarasý geçersiz";	
+		if(!isNameValid())
+			return "Ad veya soyad hatalý";
+		if(!isMailValid())
+			return "Email adresi geçersiz";
+		if(!isPhoneNumberValid())
+			return "Telefon numarasý geçersiz. ";
+		if(!isBirthDateValid())
+			return "Yaþ 12 den küçük veya tarih geçersiz.";
+		if(!isPasswordValid())
+			return "Parola geçersiz, en az bir büyük ve küçük harf ile en az bir rakam içermeli. 8-12 karakter arasýnda olmalý";
+
+	
+		return "VALID";
+			
 		
 	}
 	
