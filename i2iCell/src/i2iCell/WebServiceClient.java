@@ -143,7 +143,7 @@ public class WebServiceClient {
 	
 	private String readServiceUrlFromFile(String webServiceName) {
 		
-		File file = new File("C:\\Users\\7321\\eclipse-workspace\\i2iCell\\src\\i2iCell\\ServiceLinks.xml");
+		File file = new File("src/i2iCell/ServiceLinks.xml");
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder;
 		
