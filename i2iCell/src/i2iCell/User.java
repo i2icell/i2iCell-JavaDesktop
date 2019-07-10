@@ -85,14 +85,41 @@ public class User {
 	
 	
 	public boolean isTcValid() {
-		if(tcNumber.length() != 11)
+		if (tcNumber == null || tcNumber.length() != 11)
 			return false;
 		else {
-			return isNumeric(tcNumber);
-		}		
+			if (isNumeric(tcNumber)) {
+				int[] tcArray = stringToIntArray(tcNumber);
+
+				if (tcArray[0] == 0)
+					return false;
+				if (tcArray[10] % 2 == 1)
+					return false;
+
+				if (((tcArray[0] + tcArray[2] + tcArray[4] + tcArray[6] + tcArray[8]) * 7
+						- (tcArray[1] + tcArray[3] + tcArray[5] + tcArray[7])) % 10 != tcArray[9])
+					return false;
+
+				if ((tcArray[0] + tcArray[1] + tcArray[2] + tcArray[3] + tcArray[4] + tcArray[5] + tcArray[6]
+						+ tcArray[7] + tcArray[8] + tcArray[9]) % 10 != tcArray[10])
+					return false;
+
+			}
+			return true;
+		}
+	}
+
+	public static int[] stringToIntArray(String string) {
+		
+		int[] intArray = new int[string.length()];
+		
+		for(int i = 0; i<string.length(); i++) {
+			intArray[i] = Character.getNumericValue(string.charAt(i));		
+		}	
+		return intArray;			
 	}
 	
-
+	
 	public boolean isPhoneNumberValid() {
 		if(phoneNumber.length() != 10 && phoneNumber.charAt(0) != TURKISH_PHONE_NUMBER_PREFIX ) {
 			return false;
@@ -109,7 +136,7 @@ public class User {
 			return false;
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-			dateFormat.setLenient(false);;			
+			dateFormat.setLenient(false);			
 			dateFormat.parse(birthDate);		
 			return isAdult();
 			
@@ -152,7 +179,4 @@ public class User {
 
 		return "VALID";	
 	}
-	
-
-	
 }

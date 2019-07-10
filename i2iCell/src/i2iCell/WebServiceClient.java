@@ -91,6 +91,7 @@ public class WebServiceClient {
 			bufferedReader.close();
 		} catch (Exception e) {
 			log.error("Error while requesting from URL : " + serviceUrlString + "\nError : " + e);
+			Controller.alert("Baðlantý hatasý", "Lutfen Internet baðlantýnýzý kontrol edin");
 
 		}
 

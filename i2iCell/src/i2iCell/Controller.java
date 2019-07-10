@@ -104,7 +104,7 @@ public class Controller {
 	}
 	
 
-	public void alert(String title, String message) {
+	public static void alert(String title, String message) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle(title);
 		alert.setHeaderText("i2iCell");
