@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.regex.Pattern;
 
 public class User {
@@ -80,7 +79,7 @@ public class User {
 		LocalDate today = LocalDate.now();
 		long years = java.time.temporal.ChronoUnit.YEARS.between( start , today );
 		System.out.println("YAÞ " + years);
-		if(years < 12.0 )
+		if(years < 12.0 || years > 150 )
 			return false;
 		return true;
 		
@@ -154,7 +153,7 @@ public class User {
 		if(!isPhoneNumberValid())
 			return "Telefon numarasý geçersiz. ";
 		if(!isBirthDateValid())
-			return "Yaþ 12 den küçük veya tarih geçersiz.";
+			return "Yaþ sýnýrý aþýldý veya tarih geçersiz.";
 		if(!isPasswordValid())
 			return "Parola geçersiz, en az bir büyük ve küçük harf ile en az bir rakam içermeli. 8-12 karakter arasýnda olmalý";
 

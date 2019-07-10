@@ -1,17 +1,10 @@
 package i2iCell;
 
-import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Formatter;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.helpers.DateTimeDateFormat;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;

@@ -1,17 +1,13 @@
 package i2iCell;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.helpers.Loader;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,10 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class Controller implements Initializable{
+public class Controller {
 
 	private  static Logger log = Logger.getLogger(WebServiceClient.class.getName());
 	private static final String PHONE_NUMBER_PATTERN = "[0-9]+";
@@ -68,30 +63,32 @@ public class Controller implements Initializable{
 
 	public void onClickLogin(ActionEvent event) {
 		
-		String phoneNumber = txtLoginName.getText();
-		String password =  txtLoginPassword.getText();
+		String phoneNumber 	= 	txtLoginName.getText();
+		String password 	= 	txtLoginPassword.getText();
 		
 		WebServiceClient webServiceClient  = new WebServiceClient();
 		boolean isLoginSucces = webServiceClient.login(phoneNumber, password);
 		
 		if(isLoginSucces) {
 			
-			
-			String[] balances = webServiceClient.getBalances(phoneNumber);
+			log.info("User logged in");
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("ShowBalanceLayout.fxml"));
 			
 			try {
 				loader.load();
+				log.info("Scene changed to ShowBalance.fxml");
+				
 			} catch (IOException e) {
 				log.warn("Error while changing screen to ShowBalance  " + e);
 
 			}
-			
+			String[] balances = webServiceClient.getBalances(phoneNumber);
 			ShowBalanceController showBalanceController = loader.getController();
 			showBalanceController.setPhoneNumber(phoneNumber);
 			showBalanceController.setBalance(balances[0], balances[1], balances[2]);
+			showBalanceController.setUserInfo(webServiceClient.getUserProfile(phoneNumber));
 			
 			Parent pane = loader.getRoot();
 			Scene scene = new Scene( pane );
@@ -102,7 +99,6 @@ public class Controller implements Initializable{
 		}	
 		else {
 			alert("Giriþ baþarýsýz", "Kullanýcý adý veya parola hatalý");
-			labelLoginMessage.setText("Kullanýcý adý veya parola yanlýþ");
 			log.warn("Login failed");
 		}
 	}
@@ -115,7 +111,7 @@ public class Controller implements Initializable{
 		alert.setContentText(message);
 		alert.showAndWait().ifPresent(rs -> {
 		    if (rs == ButtonType.OK) {
-		        log.info("Message closed. Content : " +  message);;
+		        log.info("Message closed. Title : " +  title);;
 		    }
 		});
 	}
@@ -142,12 +138,6 @@ public class Controller implements Initializable{
 		
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
-		
-	}
-	
 	
 
 

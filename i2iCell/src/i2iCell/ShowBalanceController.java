@@ -1,13 +1,9 @@
 package i2iCell;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import org.apache.log4j.Logger;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 public class ShowBalanceController extends Controller  {
@@ -27,6 +23,8 @@ public class ShowBalanceController extends Controller  {
 	private Label labelShowUserPhone;
 	@FXML
 	private Label labelShowUserPackage;
+	@FXML
+	private Label labelShowUserName;
 	
 
 	
@@ -35,8 +33,16 @@ public class ShowBalanceController extends Controller  {
 		labelGbBalance.setText(gb);
 		labelMinuteBalance.setText(minute);
 		labelSmsBalance.setText(sms);
+
+		
+		
+	}
+	
+	public void setUserInfo(String[] userInfo) {
+		
 		labelShowUserPhone.setText(phoneNumber);
-		labelShowUserPackage.setText("Baþlangýç");
+		labelShowUserPackage.setText(userInfo[3]);
+		labelShowUserName.setText(userInfo[0] + " "  + userInfo[1]);
 		
 		
 	}

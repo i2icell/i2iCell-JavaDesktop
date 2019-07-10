@@ -83,6 +83,11 @@
                </image>
             </ImageView>
             <Button layoutX="348.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: rgba(0,0,0,0.08)rgba(0,0,0,0.08); -fx-background-color: linear-gradient(#9a9a9a, #909090); -fx-background-radius: 10,10,10; -fx-background-image: icons\ade7ef70-0b01-4b58-8.png;" text="Back" textAlignment="CENTER" />
+            <Label layoutX="733.0" layoutY="15.0" text="Kayıt Ol">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane fx:id="centerPane" layoutX="407.0" layoutY="66.0" prefHeight="415.0" prefWidth="392.0" style="-fx-border-style: dashed;">

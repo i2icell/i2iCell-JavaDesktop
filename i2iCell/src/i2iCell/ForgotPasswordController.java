@@ -34,8 +34,7 @@ public class ForgotPasswordController extends Controller {
 					alert("Parola deðiþmedi", "Bilgilerden bazýlarý hatalý olabilir");
 				}
 			}else {
-				alert(" Geçersiz giriþ", "Telefon numarasý (5** *** ****) olacak þekilde girilmelidir"
-						+ " \n TC No 11 hane ve geçerli olmalýdýr \n Parola en az büyük küçük harf ve sayýlardan oluþmalýdýr");
+				alert(" Geçersiz giriþ", "Girilen bilgiler formata uygun deðil");
 			}
 			
 		}else {

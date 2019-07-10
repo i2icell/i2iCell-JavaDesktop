@@ -8,4 +8,4 @@
 <getBalances>http://68.183.75.84:8080/i2iCellService/services/Services/getBalances?inputPhoneNumber=INPUTNUMBER
 </getBalances>
 <changePassword>http://68.183.75.84:8080/i2iCellService/services/Services/changePassword?inputPhoneNumber=USERNAME&amp;inputTcNumber=TCNUMBERINPUT&amp;inputNewPassword=PASSWORDINPUT</changePassword>
-</root>
+	<showProfile>http://68.183.75.84:8080/i2iCellService/services/Services/showProfile?inputPhoneNumber=INPUTNUMBER</showProfile></root>
