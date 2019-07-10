@@ -68,8 +68,7 @@ public class User {
 		
 		if(Pattern.matches(NAME_PATTERN, firstName) && Pattern.matches(NAME_PATTERN, lastName))
 			return true;
-		else return false;
-		
+		else return false;	
 	}
 	
 	public boolean isAdult() {
@@ -81,8 +80,7 @@ public class User {
 		System.out.println("YAÞ " + years);
 		if(years < 12.0 || years > 150 )
 			return false;
-		return true;
-		
+		return true;		
 	}
 	
 	
@@ -112,9 +110,9 @@ public class User {
 		try {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 			dateFormat.setLenient(false);;			
-			dateFormat.parse(birthDate);
-			
+			dateFormat.parse(birthDate);		
 			return isAdult();
+			
 		} catch (ParseException e) {
 			return false;
 		}  
@@ -133,17 +131,12 @@ public class User {
 	      return Pattern.matches(MAIL_PATTERN,mail);
 	}
 	
-	public boolean isPasswordValid() {
-		
-		
-		return Pattern.matches(PASSWORD_PATTERN, password);
-		
-		
+	public boolean isPasswordValid() {	
+		return Pattern.matches(PASSWORD_PATTERN, password);				
 	}
 	
 	public String isUserValid() {
-		
-		
+			
 		if(!isTcValid())
 			return "TC Kimlik numarasý geçersiz";	
 		if(!isNameValid())
@@ -157,16 +150,9 @@ public class User {
 		if(!isPasswordValid())
 			return "Parola geçersiz, en az bir büyük ve küçük harf ile en az bir rakam içermeli. 8-12 karakter arasýnda olmalý";
 
-	
-		return "VALID";
-			
-		
+		return "VALID";	
 	}
 	
-	
-	
-	
-    
-    
+
 	
 }

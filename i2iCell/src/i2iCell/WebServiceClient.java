@@ -107,7 +107,6 @@ public class WebServiceClient {
 		if (result.equals(SUCCESS))
 			return true;
 		return false;
-
 	}
 		
 	private String[] getReturnValuesFromResponse(String response) {

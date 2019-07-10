@@ -33,24 +33,19 @@ public class ShowBalanceController extends Controller  {
 		labelGbBalance.setText(gb);
 		labelMinuteBalance.setText(minute);
 		labelSmsBalance.setText(sms);
-
-		
-		
 	}
 	
 	public void setUserInfo(String[] userInfo) {
 		
 		labelShowUserPhone.setText(phoneNumber);
 		labelShowUserPackage.setText(userInfo[3]);
-		labelShowUserName.setText(userInfo[0] + " "  + userInfo[1]);
-		
-		
+		labelShowUserName.setText(userInfo[0] + " "  + userInfo[1]);	
 	}
 	
 	public void onClickLogout(ActionEvent event) {
 		changeScene(event, "LoginLayout.fxml");
 		log.info("User logged out..");
-		
+	
 	}
 	
 	
@@ -63,11 +58,9 @@ public class ShowBalanceController extends Controller  {
 		} catch (Exception e) {
 			alert("Bilgilere eriþilemedi", "Bakiye bilgilerine eriþirken hata oluþtu");
 			log.error("Error while refreshing ShowBalance Scene:  " +  e );
-		}
-		
+		}		
 	}
 
-	
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber =  phoneNumber;
 	}

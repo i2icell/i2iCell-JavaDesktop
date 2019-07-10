@@ -57,8 +57,7 @@ public class CreateAccountController extends Controller{
 				log.info("New user created by using web service");
 			}
 			else {
-				alert("Kayýt Baþarýsýz", "Bu kiþi daha önce kaydolmuþ ya da bilgiler geçersiz");
-				
+				alert("Kayýt Baþarýsýz", "Bu kiþi daha önce kaydolmuþ ya da bilgiler geçersiz");			
 				log.warn("Create user web service denied to create new user..");
 			}
 		}
